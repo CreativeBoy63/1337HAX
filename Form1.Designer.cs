@@ -30,6 +30,7 @@
         {
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -37,27 +38,40 @@
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.textBox1.Location = new System.Drawing.Point(0, 0);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(333, 20);
+            this.textBox1.Size = new System.Drawing.Size(334, 20);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "10.0.0.1";
             // 
             // button1
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(0, 20);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(333, 45);
+            this.button1.Size = new System.Drawing.Size(167, 45);
             this.button1.TabIndex = 2;
-            this.button1.Text = "get ROBUX (no virus)";
+            this.button1.Text = "get ROBUX";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button2.Font = new System.Drawing.Font("Comic Sans MS", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(167, 20);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(167, 45);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "(no virus)";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(333, 65);
+            this.ClientSize = new System.Drawing.Size(334, 65);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.MaximizeBox = false;
@@ -73,6 +87,7 @@
 
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

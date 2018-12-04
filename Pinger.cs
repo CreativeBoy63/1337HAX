@@ -11,25 +11,38 @@ namespace PingTest
 {
     class Pinger
     {
+        bool pinging;
         IPAddress ip;
         byte[] bytes;
-        Ping[] ping;
+        Ping ping;
+        Thread thread;
 
         public Pinger(string inputIP, byte[] b)
         {
             ip = IPAddress.Parse(inputIP);
             bytes = b.ToArray();
+            pinging = false;
         }
 
-        public void Ping()
+        public void StartPing()
         {
-            ping = new Ping[Environment.ProcessorCount * 512];
-            Parallel.ForEach(ping, b => Bing(b = new Ping())); //runs a bunch of threads in parallel
+            //ping = new Ping[Environment.ProcessorCount];
+            ping = new Ping();
+            pinging = true;
+            //thread = new Thread(() => Parallel.ForEach(ping, b => Bing(b = new Ping()))); //runs a bunch of threads in parallel
+            thread = new Thread(() => Bing(ping));
+            thread.Start();
+        }
+
+        public void StopPing()
+        {
+            pinging = false;
+            thread.Join(); // waits until the thread stops
         }
 
         private void Bing(Ping p)
         {
-            while (true)
+            while (pinging)
                 p.Send(ip, 1, bytes);
         }
     }
